@@ -1,0 +1,8 @@
+<h2>Nome: <%= @user.nome%></h2>
+		<p>CPF: <%= @user.cpf %></p>
+		<p>Email: <%= @user.email %></p>
+		<p>Data de matricula:<%= @user.matricula %></p>
+
+<%= link_to "Voltar", users_path %>
+<%= link_to "Editar", edit_user_path(@user) %>
+<%= link_to "Deletar", user_path(@user), method: :delete, data: {confirm: "Você tem certeza?"} %>

@@ -1,0 +1,11 @@
+<%= simple_form_for @user do |f| %>
+
+	<%= f.input :nome, label: "Nome" %>
+	<%= f.input :cpf, label: "CPF" %>
+	<%= f.input :email, label: "Email" %>
+	<%= f.input :matricula, label: "Data de Matricula" %>
+
+	<%= f.button :submit %>
+
+
+<% end %>

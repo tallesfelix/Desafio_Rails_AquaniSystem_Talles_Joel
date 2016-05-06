@@ -1,1 +1,0 @@
-# Desafio_Rails_AquaniSystem_Talles_Joel
