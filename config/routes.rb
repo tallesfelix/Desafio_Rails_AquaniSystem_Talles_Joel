@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   patch '/groups/:id/add_user/:user_id' => 'groups#add_user', as: :group_add_user
 
+  get 'pages/about' => 'pages#about'
+
+
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

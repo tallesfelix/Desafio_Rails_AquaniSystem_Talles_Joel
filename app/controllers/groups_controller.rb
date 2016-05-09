@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @members = @group.users
+    @users = User.all
   end
 
   # GET /groups/new
@@ -24,12 +25,12 @@ class GroupsController < ApplicationController
   end
 
   def add_user
-    @user = User.find(params[:user_id])
-    @group = Group.find(params[:id])
+    user = User.find(params[:user_id])
+    group = Group.find(params[:id])
 
-    @group.users « @user
+    group.users « user
 
-    redirect_to :back
+    redirect_to :back, notice: '#{user.name} adicionado ao time!'
   end
 
 

@@ -20,5 +20,22 @@
   <%= @group.obs %>
 </p>
 
+<p><h2><%= @group.name %></h2></p>
+
+<p>Pessoas nesse grupo</p>
+
+	<% @members.each do |member| %>
+		<p><%=member.nome %><p>
+		<%end%>
+
+<p>Pessoas fora do grupo</p>
+
+	<% @users.each do |user| %>
+	<% unless user.in? @members %>
+	  <p><%= user.nome %> — <%= link_to 'Adicionar ao time', group_add_user_path(@group.id, user), method: :patch %></p>
+
+		<% end %>
+	<%end%>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
