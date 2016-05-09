@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :groups
   resources :users
 
+  patch '/groups/:id/add_user/:user_id' => 'groups#add_user', as: :group_add_user
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505184003) do
+ActiveRecord::Schema.define(version: 20160509135745) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "schedule"
+    t.string   "teacher"
+    t.text     "obs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "nome"
@@ -20,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160505184003) do
     t.date     "matricula"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
   end
 
 end

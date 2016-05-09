@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projeto1</title>
+  <title>Aquanis</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<%= link_to "Aquanis", root_path, class: "navbar-brand" %>
+			</div>
+			<%= link_to "Novo aluno", new_user_path, class: "navbar-text navbar-link navbar-right" %>
+			
+		</div>
+
+	</nav>
 
 <%= yield %>
 
