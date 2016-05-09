@@ -13,8 +13,10 @@
 			<div class="navbar-header">
 				<%= link_to "Aquanis", root_path, class: "navbar-brand" %>
 			</div>
-			<%= link_to "Novo aluno", new_user_path, class: "navbar-text navbar-link navbar-right" %>
-			
+			<ul class="nav navbar-nav">
+			<li><%= link_to "Novo aluno", new_user_path %></li>
+			<li><%= link_to "Nova Turma", new_group_path%></li>
+			</ul>
 		</div>
 
 	</nav>

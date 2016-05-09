@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
     user = User.find(params[:user_id])
     group = Group.find(params[:id])
 
-    group.users « user
+    group.users << user
 
     redirect_to :back, notice: '#{user.name} adicionado ao time!'
   end
