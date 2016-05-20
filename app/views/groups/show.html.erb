@@ -23,18 +23,18 @@
 
 <h3>Pessoas nesse grupo</h3>
 
-	<% @members.each do |member| %>
-		<p><%=member.nome %><p>
-		<%end%>
+  <% @members.each do |member| %>
+    <p><%=member.nome %></p>
+    <%end%>
 
 <h3>Pessoas fora do grupo</h3>
 
-	<% @users.each do |user| %>
-	<% unless user.in? @members %>
-	  <p><%= user.nome %> — <%= link_to 'Adicionar ao time', group_add_user_path(@group.id, user), method: :patch %></p>
+  <% @users.each do |user| %>
+  <% unless user.in? @members %>
+    <p><%= user.nome %> — <%= link_to 'Adicionar ao time', group_add_user_path(@group.id, user), method: :patch %></p>
 
-		<% end %>
-	<%end%>
+    <% end %>
+  <%end%>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

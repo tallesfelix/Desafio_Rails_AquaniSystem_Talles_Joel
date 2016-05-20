@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'pages/about' => 'pages#about'
 
+  get 'users/payment' => 'users#payment'
+
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

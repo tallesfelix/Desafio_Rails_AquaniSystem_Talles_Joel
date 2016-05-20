@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :find_user, only: [:show, :edit , :update , :destroy]
+
 	def index
 		@users = User.all.order(:nome)
 	end
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new (user_params)
+		@user.cpf = CPF.new(user_params[:cpf]).formatted
 			if @user.save
 				redirect_to users_path
 			else
