@@ -30,7 +30,7 @@ class GroupsController < ApplicationController
 
     group.users << user
 
-    redirect_to :back, notice: '#{user.name} adicionado ao time!'
+    redirect_to :back, notice: "#{user.nome} adicionado ao time!"
   end
 
 
