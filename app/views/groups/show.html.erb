@@ -23,14 +23,14 @@
 
 <h3>Pessoas nesse grupo</h3>
 
-  <% @members.each do |member| %>
+  <% @group.users.each do |member| %>
     <p><%=member.nome %></p>
     <%end%>
 
-<h3>Pessoas fora do grupo</h3>
+<h3>Pessoas em nenhum grupo</h3>
 
   <% @users.each do |user| %>
-  <% unless user.in? @members %>
+  <% if user.group_id == nil%>
     <p><%= user.nome %> — <%= link_to 'Adicionar ao time', group_add_user_path(@group.id, user), method: :patch %></p>
 
     <% end %>

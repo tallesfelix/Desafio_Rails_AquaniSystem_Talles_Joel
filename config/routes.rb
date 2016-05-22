@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   patch '/groups/:id/add_user/:user_id' => 'groups#add_user', as: :group_add_user
 
+  patch '/users/:id/remove_group' => 'users#remove_group', as: :remove_group
+
+
   get 'pages/about' => 'pages#about'
-
-
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

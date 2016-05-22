@@ -28,3 +28,11 @@
 	       </div>
    
     <% end %>
+
+   <h3>Alunos não matriculados </h3>
+   <% @users.each do |user| %>
+   <% if user.group_id.nil? %>
+    <p><%= user.nome %></p>
+    <%end%>
+
+    <% end %>
