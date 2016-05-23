@@ -3,14 +3,13 @@
 		<p>Email: <%= @user.email %></p>
 		<p>Data de matricula:<%= @user.matricula %></p>
 		<p>Idade:<%= @user.idade %></p>
-			<% if @user.group_id != nil %>
-				<p>Matriculado na turma: <%= @user.group.name %>
-				<button type="button" class="btn btn-info"><%= link_to "Remover da turma", remove_group_path(@user.id), method: :patch %></button>
-				</p>
-			<%else%>
-				<p>Não está em nenhuma turma.</p>
-			<%end%>
+		<% if @user.group_id != nil %>
+		<p>Matriculado na turma: <%= @user.group.name %></p>
+		<%end%>
 		
+		<% if @user.group_id != nil %>
+		<%= link_to "Remover da turma", remove_group_path(@user.id), method: :patch %>
+		<%end%>
 
 <tb><%= link_to users_path do%>
 	<i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>
