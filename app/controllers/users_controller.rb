@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 		user.save
 
-		redirect_to :back, notice: 'Usuário removido od grupo!'
+		redirect_to :back, notice: 'Usuário removido do grupo!'
 	end
 
 	def create

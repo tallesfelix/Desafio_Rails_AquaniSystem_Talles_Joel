@@ -1,4 +1,15 @@
 <% @users.each do |user| %>
-	<p>Nome: <%= link_to user.nome, user %><p>
-		<p>Data de matricula: <%= user.matricula %></p>
+	<div class="row item">
+		<div class="col-md-8">
+				<p>Nome: <%= link_to user.nome, user %></p>
+				<p>Data de matricula: <%= user.matricula %></p>
+			</div>
+        	<div class="col-md-1">
+				<p><%= link_to user, method: :delete, data: {confirm: "Você tem certeza?"} do%></p>
+					<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+				<%end%>
+			</div>
+		</div>
+
+		
 		<% end %>
