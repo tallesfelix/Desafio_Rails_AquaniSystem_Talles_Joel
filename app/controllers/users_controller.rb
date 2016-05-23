@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	before_action :find_user, only: [:show, :edit , :update , :destroy]
 
 	def index
-		@users = User.all.order(:nome)
+		@users = User.where(["nome LIKE ?", "%#{params[:search]}%"])
 	end
 
 	def show
@@ -45,6 +45,8 @@ class UsersController < ApplicationController
 			render 'edit'
 		end
 	end
+
+
 
 	def destroy
 		@user.destroy

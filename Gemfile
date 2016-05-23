@@ -20,6 +20,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'sendgrid'
 gem 'figaro'
+gem "scoped_search"
 gem "cpf_cnpj"
 require "cpf_cnpj"
 
