@@ -18,6 +18,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'sendgrid'
+gem 'figaro'
 gem "cpf_cnpj"
 require "cpf_cnpj"
 

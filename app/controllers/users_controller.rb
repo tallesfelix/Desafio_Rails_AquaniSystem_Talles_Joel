@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 		@user = User.new (user_params)
 		@user.cpf = CPF.new(user_params[:cpf]).formatted
 			if @user.save
+				UserMailer.warnings(@user).deliver_now
 				redirect_to users_path
 			else
 				render 'new'
