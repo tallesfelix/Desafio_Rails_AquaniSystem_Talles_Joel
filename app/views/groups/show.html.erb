@@ -27,13 +27,15 @@
     <p><%=member.nome %></p>
     <%end%>
 
-<h3>Pessoas em nenhum grupo</h3>
+<h3>Pessoas não inscritas em turmas</h3>
 
   <% @users.each do |user| %>
-  <% if user.group_id == nil%>
+  <% if user.group == nil%>
     <p><%= user.nome %> — <%= link_to 'Adicionar ao time', group_add_user_path(@group.id, user), method: :patch %></p>
+    <%else%>
+    <p>Todos os alunos estão inscritos</p>
+ <% end %>
 
-    <% end %>
   <%end%>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

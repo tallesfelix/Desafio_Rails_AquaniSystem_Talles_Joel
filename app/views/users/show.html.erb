@@ -3,7 +3,7 @@
 		<p>Email: <%= @user.email %></p>
 		<p>Data de matricula:<%= @user.matricula %></p>
 		<p>Idade:<%= @user.idade %></p>
-			<% if @user.group_id != nil %>
+			<% if @user.group != nil %>
 				<p>Matriculado na turma: <%= @user.group.name %>
 				<button type="button" class="btn btn-info"><%= link_to "Remover da turma", remove_group_path(@user.id), method: :patch %></button>
 				</p>

@@ -31,7 +31,7 @@
 
    <h3>Alunos não matriculados </h3>
    <% @users.each do |user| %>
-   <% if user.group_id.nil? %>
+   <% if user.group.nil? %>
     <p><%= user.nome %></p>
     <%end%>
 

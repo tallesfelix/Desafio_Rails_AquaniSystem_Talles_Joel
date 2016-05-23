@@ -1,3 +1,12 @@
 class Group < ActiveRecord::Base
 	has_many :users
-end
+
+	def set_group_id_nil=(group)
+	  @group = group
+	  @group.users.each do |user|
+	    user.group = nil
+	 end
+	end
+
+  end
+
