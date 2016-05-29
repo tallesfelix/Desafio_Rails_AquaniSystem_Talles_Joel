@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resources :groups
   resources :users
 
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   patch '/users/:id/remove_group' => 'users#remove_group', as: :remove_group
 
+  patch '/users/:id/add_payment/:payment_id' => 'users#add_payment', as: :group_add_payment
 
   get 'pages/about' => 'pages#about'
 

@@ -3,16 +3,28 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.where(["nome LIKE ?", "%#{params[:search]}%"])
+		@payments = Payment.all
 	end
 
 	def show
 		@user = User.find(params[:id])
+		@pays = @user.payments
+		@payments = Payment.all
 		@groups = Group.all
 	end
 
 	def new
 		@user = User.new
 	end
+
+	def add_payment
+    user = User.find(params[:id])
+    payment = Payment.find(params[:payment_id])
+
+    user.payments << payment
+
+    redirect_to :back, notice: "#{payment.name} foi pago!"
+  	end
 
 	def remove_group
 		user = User.find(params[:id])

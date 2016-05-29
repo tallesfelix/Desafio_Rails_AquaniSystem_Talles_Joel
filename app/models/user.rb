@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	has_many :payments
+
 	belongs_to :group
 
 	validate :cpf_must_be_valid

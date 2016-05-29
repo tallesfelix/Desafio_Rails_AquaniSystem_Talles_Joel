@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+
+	<% if Time.now - user.payment.last.created_at = 1.month %>
+		<%= user.nome %>
+	<% end %>
+	<% end %>

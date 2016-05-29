@@ -24,3 +24,12 @@
 	<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
 	<%end%>
 </tb>
+
+<%= link_to "Novo pagamento", new_payment_path %>
+
+<h3>Pagamentos ja feitos</h3>
+
+  <% @pays.each do |pay| %>
+    <p><%=link_to pay.name, pay %></p>
+    <%end%>
+ 
