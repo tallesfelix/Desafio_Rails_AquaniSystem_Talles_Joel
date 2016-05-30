@@ -24,6 +24,7 @@ gem 'devise'
 gem 'rails_admin'
 gem "scoped_search"
 gem "cpf_cnpj"
+require "cpf_cnpj"
 
 
 gem 'sdoc', '~> 0.4.0', group: :doc
