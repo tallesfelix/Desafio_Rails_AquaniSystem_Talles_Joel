@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  devise_for :clients
+
   resources :payments
   resources :groups
   resources :users
@@ -9,9 +14,9 @@ Rails.application.routes.draw do
 
   patch '/users/:id/add_payment/:payment_id' => 'users#add_payment', as: :group_add_payment
 
-  get 'pages/about' => 'pages#about'
+  get '/home/about' => 'home#about'
 
-  root 'users#index'
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

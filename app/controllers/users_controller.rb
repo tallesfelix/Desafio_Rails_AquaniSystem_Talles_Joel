@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+	before_action :authenticate_client!
 	before_action :find_user, only: [:show, :edit , :update , :destroy]
 
 	def index
-		@users = User.where(["nome LIKE ?", "%#{params[:search]}%"])
+		@users = User.where(["name LIKE ?", "%#{params[:search]}%"])
 		@payments = Payment.all
 	end
 
@@ -67,7 +68,7 @@ class UsersController < ApplicationController
 
 	private 
 		def user_params
-			params.require(:user).permit(:nome, :cpf, :email, :matricula, :idade)
+			params.require(:user).permit(:name, :cpf, :email, :matricula, :idade)
 		end
 
 		def find_user

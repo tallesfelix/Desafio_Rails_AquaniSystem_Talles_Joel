@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'sendgrid'
 gem 'figaro'
 gem 'devise'
+gem 'rails_admin'
 gem "scoped_search"
 gem "cpf_cnpj"
 require "cpf_cnpj"

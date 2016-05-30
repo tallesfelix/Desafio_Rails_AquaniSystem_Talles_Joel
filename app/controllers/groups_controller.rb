@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_client!
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
@@ -32,7 +33,7 @@ class GroupsController < ApplicationController
 
     group.users << user
 
-    redirect_to :back, notice: "#{user.nome} adicionado ao time!"
+    redirect_to :back, notice: "#{user.name} adicionado ao time!"
   end
 
 

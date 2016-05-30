@@ -10,7 +10,7 @@
 		<div class="col-md-8">
 
 		<% if user.payments == nil%>
-				<p>Nome: <%= link_to user.nome, user %></p>
+				<p>Nome: <%= link_to user.name, user %></p>
 					<p>Data de matricula: <%= user.matricula %></p>
 				</div>
 	        	<div class="col-md-1">
@@ -20,8 +20,8 @@
 				</div>
 			</div>
 
-			<% elseif Time.now - user.payments.last.created_at >= 5.minutes %>
-					<p><strong>Nome: <%= link_to user.nome, user %></strong></p>
+			<% elseif Time.now - user.payments.last.created_at >= 1.month %>
+					<p><strong>Nome: <%= link_to "#{user.name}(Atrasado)", user %></strong></p>
 					<p>Data de matricula: <%= user.matricula %></p>
 				</div>
 	        	<div class="col-md-1">
@@ -32,7 +32,7 @@
 			</div>
 
 			<% else %>
-					<p>Nome: <%= link_to user.nome, user %></p>
+					<p>Nome: <%= link_to user.name, user %></p>
 					<p>Data de matricula: <%= user.matricula %></p>
 				</div>
 	        	<div class="col-md-1">

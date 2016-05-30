@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_client!
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   # GET /payments
@@ -72,6 +73,6 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:name, :value, :description, :user_id)
+      params.require(:payment).permit(:name, :value, :description)
     end
 end
